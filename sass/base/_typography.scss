@@ -3,11 +3,15 @@
   }
 
 h2 {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 h3 {
-  color: white;
+  color: rgb(141, 18, 18);
+}
+
+.details-movie {
+  color: #000000;
 }
 
 p {
@@ -18,5 +22,12 @@ p {
 #character-list a,
 #character-list li {
     color: red;
+}
+
+.movie-opening-crawl {
+  font-family: 'Prompt', sans-serif;
+font-weight: bold;
+color: rgb(0, 0, 0);
+background-color: rgba(85, 255, 0, 0.522);
 }
 

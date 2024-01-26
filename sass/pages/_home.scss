@@ -1,5 +1,5 @@
+/*
 .background-image {
-    /* Full screen */
     position: fixed;
     top: 0;
     left: 0;
@@ -8,3 +8,23 @@
     filter: blur(8px);
     z-index: -1;
 }
+*/
+
+body {
+    font-family: 'Starjedi', sans-serif;
+    letter-spacing: 2px;
+    
+    background: linear-gradient(to right, 
+                                #000000, 
+                                #330000, 
+                                #8D0000, 
+                                #b27a789d, 
+                                #ffffff79, 
+                                #80b28066, 
+                                #25b62566, 
+                                #00440099, 
+                                #073807ae,
+                                #00000097); 
+    
+  }
+  

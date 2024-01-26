@@ -1,13 +1,23 @@
+@font-face {
+  font-family: "Starjedi";
+  src: url("../font/Starjedi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 .hidden {
   display: none;
 }
 
 h2 {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 h3 {
-  color: white;
+  color: rgb(141, 18, 18);
+}
+
+.details-movie {
+  color: #000000;
 }
 
 p {
@@ -19,13 +29,26 @@ p {
   color: red;
 }
 
+.movie-opening-crawl {
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgba(85, 255, 0, 0.522);
+}
+
+/*
 .background-image {
-  /* Full screen */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: blur(8px);
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    z-index: -1;
+}
+*/
+body {
+  font-family: "Starjedi", sans-serif;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #000000, #330000, #8D0000, rgba(178, 122, 120, 0.6156862745), rgba(255, 255, 255, 0.4745098039), rgba(128, 178, 128, 0.4), rgba(37, 182, 37, 0.4), rgba(0, 68, 0, 0.6), rgba(7, 56, 7, 0.6823529412), rgba(0, 0, 0, 0.5921568627));
 }
