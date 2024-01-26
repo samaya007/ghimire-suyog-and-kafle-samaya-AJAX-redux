@@ -1,3 +1,25 @@
+/*
+-Suyog
+The image need to be in .jpeg format in order to show.
+While adding images name it 1.jpeg, 2.jpeg, ... 10.jpeg
+Match movie poster with title
+Responsiveness Part using grid
+GSAP animation and loading animation.
+
+
+
+Note:
+
+Check the ID's and Class before adding grid to it.
+Locally downloaded fonts is also used. 
+The color and typography still needs works done.
+JS is slightly modified to fetch exactly 10 data. I will search other alternative as well. 
+
+Feel free to make any necessary changes with layout
+When making chnages with ID's check once in JS and SASS
+*/
+
+
 (() => {
     const characterBox = document.querySelector("#character-list");
     const movieDetailsTemplate = document.querySelector("#movie-details-template");
