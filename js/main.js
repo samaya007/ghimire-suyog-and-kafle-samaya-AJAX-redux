@@ -23,7 +23,7 @@ console.log(response);
                     const a = document.createElement('a');
                     a.textContent = character.name;
                     a.href = '#';
-                    
+
                     if (character.films.length > 0) {
                         const filmIndex = Math.floor(Math.random() * character.films.length);
                         a.dataset.films = character.films[filmIndex];
@@ -54,7 +54,7 @@ console.log(response);
                 const template = document.importNode(movieDetailsTemplate.content, true);
                 template.querySelector(".movie-title").textContent = film.title;
                 template.querySelector(".movie-opening-crawl").textContent = film.opening_crawl;
-                template.querySelector(".movie-poster").src = `img/${film.episode_id}.jpg`;
+                template.querySelector(".movie-poster").src = `images/${film.episode_id}.jpeg`;
                 movieDetailsCon.appendChild(template);
             })
             .catch(error => {
