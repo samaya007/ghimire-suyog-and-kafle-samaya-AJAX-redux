@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/grid.css">
     <script defer src="js/main.js"></script>
 </head>
 <body>
     <img src="./img/bg1.jpg" alt="Background" class="background-image">
 
-    <section id="character-box"> 
+    <div class="grid-con">
+
+    <section class="col-span-full l-col-start-1 l-col-end-6" id="character-box"> 
         <h2>Star Wars Characters</h2>
         <ul id="character-list">
         </ul>
     </section>
 
-    <section id="movie-details-box">
+    <section  class="col-span-full l-col-start-6 l-col-end-13" id="movie-details-box">
         <h2>Movie Details</h2>
         <div id="movie-details-con">
         </div>
@@ -29,5 +32,6 @@
             </section>
         </template>
     </section>
+    </div>
 </body>
 </html>
