@@ -4,10 +4,6 @@
     const movieDetailsCon = document.querySelector("#movie-details-con");
     const baseUrl = 'https://swapi.dev/api/';
 
-
-
-
-//METHOD 01
     function getCharacters() {
         fetch(`${baseUrl}people/?format=json`)
             .then(response => response.json())
@@ -34,69 +30,9 @@
 
 
 
-//METHOD 2
-/* IF this is implemneted, slight modification needs to be made on html
-function getCharacters() {
-    fetch(`${baseUrl}people`)
-    .then(response => response.json())
-    .then(function(response){
-        console.log(response.results);
-        const characters = response.results;
-        const ul = document.createElement('ul');
-        characters.forEach(character => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            // console.log(character['name']);
-            a.textContent = character['name'];
-            a.dataset.movies = character['films'];
-            li.appendChild(a);
-            ul.appendChild(li);
-        });
-        characterPane.appendChild(ul);
-    })
-    .then(function(){
-        const links = document.querySelectorAll('#character-pane li a');
-        links.forEach(link => {
-            link.addEventListener('click', getMovies);
-        })
-    })
-    .catch(errors => {
-        console.log(errors);
-        //send message to user in DOM, there was an issue
-    });
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// or function getMoive(e)
     function getMovieDetails(event) {
         event.preventDefault();
 
-        // this clears previous movie details
         movieDetailsCon.innerHTML = "";
         const filmUrl = event.currentTarget.dataset.films;
   console.log("Character clicked:", event.currentTarget.textContent);
@@ -119,5 +55,4 @@ function getCharacters() {
 
     getCharacters();
 })();
-
 
