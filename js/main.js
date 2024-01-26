@@ -8,12 +8,22 @@
         fetch(`${baseUrl}people/?format=json`)
             .then(response => response.json())
             .then(function(response) {
+
+//new chagge
+console.log(response);
+
                 const characters = response.results;
+
+// This function extracts the results from the response.
+//and then slices the first 10 characters from this list.
+
+
                 characters.slice(0, 10).forEach(character => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
                     a.textContent = character.name;
                     a.href = '#';
+                    
                     if (character.films.length > 0) {
                         const filmIndex = Math.floor(Math.random() * character.films.length);
                         a.dataset.films = character.films[filmIndex];
