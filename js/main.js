@@ -6,8 +6,6 @@ Match movie poster with title
 Responsiveness Part using grid
 GSAP animation and loading animation.
 
-
-
 Note:
 
 Check the ID's and Class before adding grid to it.
