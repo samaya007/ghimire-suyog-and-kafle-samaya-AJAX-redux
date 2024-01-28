@@ -50,5 +50,46 @@ p {
 body {
   font-family: "Starjedi", sans-serif;
   letter-spacing: 2px;
-  background: linear-gradient(to right, #000000, #330000, #8D0000, rgba(178, 122, 120, 0.6156862745), rgba(255, 255, 255, 0.4745098039), rgba(128, 178, 128, 0.4), rgba(37, 182, 37, 0.4), rgba(0, 68, 0, 0.6), rgba(7, 56, 7, 0.6823529412), rgba(0, 0, 0, 0.5921568627));
+  background-image: url("/images/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+img {
+  width: 50%;
+}
+
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.spinner {
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
