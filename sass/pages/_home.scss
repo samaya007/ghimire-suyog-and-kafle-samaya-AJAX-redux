@@ -1,7 +1,6 @@
 
 
 body {
-    font-family: 'Starjedi', sans-serif;
     letter-spacing: 2px;
     
     background: linear-gradient(to right, 
@@ -24,6 +23,8 @@ img {
     margin: 0 auto;
 }
 h2 {
+    font-family: 'Starjedi', sans-serif;
+
     font-size: 50px;
 }
 h3 {
@@ -43,19 +44,43 @@ h3 {
     justify-content: center;
     align-items: center;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(120, 99, 99, 0.494);
 }
+
+.loading-text {
+    color: #000000; 
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 20px;
+}
+
+
 
 .spinner {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 10px solid transparent;
-    border-top-color: #3498db; /* Change the color to your preference */
-    animation: spin 1s linear infinite;
+    border: 25px solid transparent;
+
+    background: linear-gradient(to right, 
+    #ffd27f, 
+    #ffbb66, 
+    #ee7600, 
+    #ee7700e4, 
+    #cbf0ff,
+
+
+    ); 
+    
+
+
+
+
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
