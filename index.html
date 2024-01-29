@@ -14,29 +14,22 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    <!-- 
-    <img src="./images/bg1.jpg" alt="Background" class="background-image">
--->
     <div class="grid-con">
-
-
         <section class="col-span-full l-col-start-1 l-col-end-6" id="character-box"> 
             <h2>Star Wars </h2>
             <ul id="character-list">
             </ul>
         </section>
 
-
-
-
         <section  class="col-span-full l-col-start-6 l-col-end-13" id="movie-details-box">
             <div id="movie-details-con">
             </div>
 
-
             <template id="movie-details-template">
                 <section>
                     <h3 class="movie-title"></h3>
+                    <br>
+                    <br>
 
                     <img src="" alt="Movie Poster" class="movie-poster">
 
@@ -45,8 +38,18 @@
                     <br>
                 </section>
             </template>
+
         </section>
     </div>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p class="loading-text">  May the force be with you ...</p>
+    </div>
     
+
+
+
+
 </body>
 </html>

@@ -22,13 +22,24 @@ When making chnages with ID's check once in JS and SASS
     const characterBox = document.querySelector("#character-list");
     const movieDetailsTemplate = document.querySelector("#movie-details-template");
     const movieDetailsCon = document.querySelector("#movie-details-con");
+    const loadingOverlay = document.querySelector('#loading-overlay');
     const baseUrl = 'https://swapi.dev/api/';
 
+    function showLoadingOverlay() {
+        loadingOverlay.style.display = 'flex';
+    }
+
+    function hideLoadingOverlay() {
+        loadingOverlay.style.display = 'none';
+    }
+
+
     function getCharacters() {
+        showLoadingOverlay(); 
         fetch(`${baseUrl}people/?format=json`)
             .then(response => response.json())
             .then(function(response) {
-
+                hideLoadingOverlay(); 
 //new chagge
 console.log(response);
 
@@ -54,7 +65,9 @@ console.log(response);
                 });
             })
             .catch(error => {
+                hideLoadingOverlay();
                 console.error("Failed to fetch characters:", error);
+                
             });
     }
 
@@ -62,13 +75,15 @@ console.log(response);
 
     function getMovieDetails(event) {
         event.preventDefault();
-
+    
         movieDetailsCon.innerHTML = "";
+        showLoadingOverlay();
         const filmUrl = event.currentTarget.dataset.films;
   console.log("Character clicked:", event.currentTarget.textContent);
         fetch(`${filmUrl}?format=json`)
             .then(response => response.json())
             .then(function(film) {
+                hideLoadingOverlay();
                 console.log("Fetched film details:", film);
 
                 const template = document.importNode(movieDetailsTemplate.content, true);
@@ -78,6 +93,7 @@ console.log(response);
                 movieDetailsCon.appendChild(template);
             })
             .catch(error => {
+                hideLoadingOverlay();
                 console.error("Failed to fetch movie details:", error);
                 console.log("Error fetching details for film URL:", filmUrl);
             });

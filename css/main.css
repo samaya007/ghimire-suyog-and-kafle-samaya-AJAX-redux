@@ -21,34 +21,118 @@ h3 {
 }
 
 p {
-  color: white;
+  color: rgb(255, 0, 0);
 }
 
-#character-list a,
-#character-list li {
-  color: red;
+#movie-details-con .movie-poster {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5);
+  margin: 10px auto;
 }
 
 .movie-opening-crawl {
-  font-family: "Prompt", sans-serif;
-  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
   color: rgb(0, 0, 0);
-  background-color: rgba(85, 255, 0, 0.522);
 }
 
-/*
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(8px);
-    z-index: -1;
+#character-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #f1c40f;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
 }
-*/
+
+#character-list li {
+  background: rgb(174, 36, 36);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#character-list li:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#character-list li:last-child {
+  margin-bottom: 0;
+}
+
+#character-list li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#character-list li a:hover {
+  color: #e67e22;
+}
+
 body {
-  font-family: "Starjedi", sans-serif;
   letter-spacing: 2px;
   background: linear-gradient(to right, #000000, #330000, #8D0000, rgba(178, 122, 120, 0.6156862745), rgba(255, 255, 255, 0.4745098039), rgba(128, 178, 128, 0.4), rgba(37, 182, 37, 0.4), rgba(0, 68, 0, 0.6), rgba(7, 56, 7, 0.6823529412), rgba(0, 0, 0, 0.5921568627));
+}
+
+img {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "Starjedi", sans-serif;
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 40px;
+  margin: 0 auto;
+}
+
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(120, 99, 99, 0.494);
+}
+
+.loading-text {
+  color: #000000;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 25px solid transparent;
+  background: linear-gradient(to right, #ffd27f, #ffbb66, #ee7600, rgba(238, 119, 0, 0.8941176471), #cbf0ff);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
