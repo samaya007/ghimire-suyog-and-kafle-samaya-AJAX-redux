@@ -1,37 +1,35 @@
-/*
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(8px);
-    z-index: -1;
-}
-*/
+
 
 body {
     font-family: 'Starjedi', sans-serif;
     letter-spacing: 2px;
-    background-image: url("/images/background.webp");
-  
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+    
+    background: linear-gradient(to right, 
+                                #000000, 
+                                #330000, 
+                                #8D0000, 
+                                #b27a789d, 
+                                #ffffff79, 
+                                #80b28066, 
+                                #25b62566, 
+                                #00440099, 
+                                #073807ae,
+                                #00000097); 
+    
 }
 
-
-h1 {
-    font-size: 70px;
-}
-
-img{
+img {
     width: 50%;
+    display: block;
+    margin: 0 auto;
 }
-
-
-
-
+h2 {
+    font-size: 50px;
+}
+h3 {
+    font-size: 40px;
+    margin: 0 auto;
+}
   
 // Spinner
 
@@ -45,14 +43,15 @@ img{
     justify-content: center;
     align-items: center;
     z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .spinner {
-    border: 6px solid rgba(0, 0, 0, 0.1);
-    border-top: 6px solid #3498db;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    border: 10px solid transparent;
+    border-top-color: #3498db; /* Change the color to your preference */
     animation: spin 1s linear infinite;
 }
 

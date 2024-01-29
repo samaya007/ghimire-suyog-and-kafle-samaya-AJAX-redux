@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Star Wars </title>
     <meta charset="utf-8">
@@ -15,20 +15,31 @@
 </head>
 <body>
     <div class="grid-con">
-        <section class="col-span-full l-col-start-1 l-col-end-6" id="character-panel">
-            <h1 class="main-title">Star Wars</h1>
+        <section class="col-span-full l-col-start-1 l-col-end-6" id="character-box"> 
+            <h2>Star Wars </h2>
+            <ul id="character-list">
+            </ul>
         </section>
-        <section class="col-span-full l-col-start-7 l-col-end-13" id="movie-panel">
-            <section id="movie-con"></section>
-            <template id="movie-template">
-                <div>
-                    <img src="" alt="" class="movie-title-image">
-                    <p class="movie-description"></p>
-                    <img src="" alt="" class="movie-image">
-                </div>
+
+        <section  class="col-span-full l-col-start-6 l-col-end-13" id="movie-details-box">
+            <div id="movie-details-con">
+            </div>
+
+            <template id="movie-details-template">
+                <section>
+                    <h3 class="movie-title"></h3>
+
+                    <img src="" alt="Movie Poster" class="movie-poster">
+
+                    <p class="movie-opening-crawl"></p>
+
+                    <br>
+                </section>
             </template>
+
         </section>
     </div>
+
     <div id="loading-overlay" class="loading-overlay">
         <div class="spinner"></div>
     </div>

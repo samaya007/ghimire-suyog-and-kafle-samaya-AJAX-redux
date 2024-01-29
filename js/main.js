@@ -1,29 +1,29 @@
-// /*
-// -Suyog
-// The image need to be in .jpeg format in order to show.
-// While adding images name it 1.jpeg, 2.jpeg, ... 10.jpeg
-// Match movie poster with title
-// Responsiveness Part using grid
-// GSAP animation and loading animation.
+/*
+-Suyog
+The image need to be in .jpeg format in order to show.
+While adding images name it 1.jpeg, 2.jpeg, ... 10.jpeg
+Match movie poster with title
+Responsiveness Part using grid
+GSAP animation and loading animation.
 
-// Note:
+Note:
 
-// Check the ID's and Class before adding grid to it.
-// Locally downloaded fonts is also used. 
-// The color and typography still needs works done.
-// JS is slightly modified to fetch exactly 10 data. I will search other alternative as well. 
+Check the ID's and Class before adding grid to it.
+Locally downloaded fonts is also used. 
+The color and typography still needs works done.
+JS is slightly modified to fetch exactly 10 data. I will search other alternative as well. 
 
-// Feel free to make any necessary changes with layout
-// When making chnages with ID's check once in JS and SASS
-// */
+Feel free to make any necessary changes with layout
+When making chnages with ID's check once in JS and SASS
+*/
 
 
 (() => {
-    const characterPanel = document.querySelector('#character-panel');
-    const movieCon = document.querySelector('#movie-con');
+    const characterBox = document.querySelector("#character-list");
+    const movieDetailsTemplate = document.querySelector("#movie-details-template");
+    const movieDetailsCon = document.querySelector("#movie-details-con");
     const loadingOverlay = document.querySelector('#loading-overlay');
-    let currentMovieIndex = 0;
-    const baseUrl = `https://swapi.dev/api/`;
+    const baseUrl = 'https://swapi.dev/api/';
 
     function showLoadingOverlay() {
         loadingOverlay.style.display = 'flex';
@@ -33,80 +33,72 @@
         loadingOverlay.style.display = 'none';
     }
 
+
     function getCharacters() {
         showLoadingOverlay(); 
-
-        fetch(`${baseUrl}people`)
+        fetch(`${baseUrl}people/?format=json`)
             .then(response => response.json())
-            .then(response => {
+            .then(function(response) {
                 hideLoadingOverlay(); 
+//new chagge
+console.log(response);
 
                 const characters = response.results;
-                const ul = document.createElement('ul');
+
+// This function extracts the results from the response.
+//and then slices the first 10 characters from this list.
+
 
                 characters.slice(0, 10).forEach(character => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
                     a.textContent = character.name;
-                    a.dataset.movies = character.films;
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
+                    a.href = '#';
 
-                characterPanel.appendChild(ul);
-            })
-            .then(() => {
-                const links = document.querySelectorAll('#character-panel li a');
-                links.forEach(link => {
-                    link.addEventListener('click', getMovies);
+                    if (character.films.length > 0) {
+                        const filmIndex = Math.floor(Math.random() * character.films.length);
+                        a.dataset.films = character.films[filmIndex];
+                    }
+                    a.addEventListener("click", getMovieDetails);
+                    li.appendChild(a);
+                    characterBox.appendChild(li);
                 });
             })
-            .catch(err => {
-                hideLoadingOverlay(); // Hide loading overlay in case of an error
-                console.log(err);
-                // Send message to the user in the DOM, there was an issue
+            .catch(error => {
+                hideLoadingOverlay();
+                console.error("Failed to fetch characters:", error);
+                
             });
     }
 
-    function getMovies(e) {
-        const movieURLs = e.currentTarget.dataset.movies;
+
+
+    function getMovieDetails(event) {
+        event.preventDefault();
     
-        if (movieURLs) {
-            showLoadingOverlay(); // Show loading overlay before fetching data
+        movieDetailsCon.innerHTML = "";
+        showLoadingOverlay();
+        const filmUrl = event.currentTarget.dataset.films;
+  console.log("Character clicked:", event.currentTarget.textContent);
+        fetch(`${filmUrl}?format=json`)
+            .then(response => response.json())
+            .then(function(film) {
+                hideLoadingOverlay();
+                console.log("Fetched film details:", film);
 
-            const movieURLArray = movieURLs.split(',');
-
-            if (currentMovieIndex < movieURLArray.length) {
-                const currentMovieURL = movieURLArray[currentMovieIndex];
-
-                fetch(currentMovieURL)
-                    .then(response => response.json())
-                    .then(movie => {
-                        hideLoadingOverlay(); // Hide loading overlay after fetching data
-                        movieCon.innerHTML = '';
-
-                        const movieDesc = document.createElement('div');
-                        movieDesc.classList.add('movie-description');
-                        movieDesc.textContent = movie.opening_crawl;
-
-                        const movieImage = document.createElement('img');
-                        movieImage.classList.add('movie-image');
-                        const episodeId = movie.episode_id;
-                        movieImage.src = `images/${episodeId}.jpeg`;
-
-                        movieCon.appendChild(movieImage);
-                        movieCon.appendChild(movieDesc);
-
-                        currentMovieIndex = (currentMovieIndex + 1) % movieURLArray.length;
-                    })
-                    .catch(error => {
-                        hideLoadingOverlay(); // Hide loading overlay in case of an error
-                        console.log(error);
-                        // Handle errors or provide user feedback
-                    });
-            }
-        }
+                const template = document.importNode(movieDetailsTemplate.content, true);
+                template.querySelector(".movie-title").textContent = film.title;
+                template.querySelector(".movie-opening-crawl").textContent = film.opening_crawl;
+                template.querySelector(".movie-poster").src = `images/${film.episode_id}.jpeg`;
+                movieDetailsCon.appendChild(template);
+            })
+            .catch(error => {
+                hideLoadingOverlay();
+                console.error("Failed to fetch movie details:", error);
+                console.log("Error fetching details for film URL:", filmUrl);
+            });
     }
 
     getCharacters();
 })();
+
