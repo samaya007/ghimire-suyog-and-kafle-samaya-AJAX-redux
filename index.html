@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Star Wars </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/grid.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="grid-con">
-        <section class="col-span-full l-col-start-1 l-col-end-6" id="character-box"> 
-            <h2>Star Wars </h2>
-            <ul id="character-list">
-            </ul>
-        </section>
-
-        <section  class="col-span-full l-col-start-6 l-col-end-13" id="movie-details-box">
-            <div id="movie-details-con">
-            </div>
-
-            <template id="movie-details-template">
-                <section>
-                    <h3 class="movie-title"></h3>
-                    <br>
-                    <br>
-
-                    <img src="" alt="Movie Poster" class="movie-poster">
-
-                    <p class="movie-opening-crawl"></p>
-
-                    <br>
-                </section>
-            </template>
-
-        </section>
+      <section class="col-span-full l-col-start-1 l-col-end-6 m-col-start-1 m-col-end-6" id="character-box">
+        <h2>Star Wars </h2>
+        <ul id="character-list"></ul>
+      </section>
+      <section class="col-span-full l-col-start-6 l-col-end-13 m-col-start-6" id="movie-details-box">
+        <div id="movie-details-con"></div>
+        <template id="movie-details-template">
+          <section>
+            <h3 class="movie-title"></h3>
+            <br>
+            <br>
+            <img src="" alt="Movie Poster" class="movie-poster">
+            <p class="movie-opening-crawl"></p>
+            <br>
+          </section>
+        </template>
+      </section>
     </div>
-
     <div id="loading-overlay" class="loading-overlay">
-        <div class="spinner"></div>
-        <p class="loading-text"> ... May the force be with you ...</p>
+      <div class="spinner"></div>
+      <p class="loading-text"> ... May the force be with you ...</p>
     </div>
-    
-
-
-
+    <!--gspa-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-    
+    <!--defer: to reduce delay-->
     <script defer src="js/main.js"></script>
-
-
-</body>
+  </body>
 </html>
