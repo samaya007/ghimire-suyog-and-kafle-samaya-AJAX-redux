@@ -9,27 +9,16 @@
 }
 
 h2 {
+  font-family: "Starjedi", sans-serif;
+  font-size: 50px;
   color: rgb(255, 255, 255);
 }
 
 h3 {
-  color: rgb(141, 18, 18);
-}
-
-.details-movie {
-  color: #000000;
-}
-
-p {
-  color: rgb(255, 0, 0);
-}
-
-#movie-details-con .movie-poster {
-  width: 50%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5);
-  margin: 10px auto;
+  font-family: "Starjedi", sans-serif;
+  color: black;
+  font-size: 40px;
+  margin: 0 auto;
 }
 
 .movie-opening-crawl {
@@ -78,25 +67,18 @@ p {
   color: #e67e22;
 }
 
+#movie-details-con .movie-poster {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #f1c40f;
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5);
+  margin: 10px auto;
+}
+
 body {
   letter-spacing: 2px;
   background: linear-gradient(to right, #000000, #330000, #8D0000, rgba(178, 122, 120, 0.6156862745), rgba(255, 255, 255, 0.4745098039), rgba(128, 178, 128, 0.4), rgba(37, 182, 37, 0.4), rgba(0, 68, 0, 0.6), rgba(7, 56, 7, 0.6823529412), rgba(0, 0, 0, 0.5921568627));
-}
-
-img {
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-}
-
-h2 {
-  font-family: "Starjedi", sans-serif;
-  font-size: 50px;
-}
-
-h3 {
-  font-size: 40px;
-  margin: 0 auto;
 }
 
 .loading-overlay {
@@ -113,10 +95,14 @@ h3 {
 }
 
 .loading-text {
-  color: #000000;
+  color: #FFE81F; /* Golden yellow color */
   margin-top: 20px;
   text-align: center;
+  font-family: "Starjedi", sans-serif;
+  font-weight: bold;
+  font-style: oblique;
   font-size: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .spinner {
