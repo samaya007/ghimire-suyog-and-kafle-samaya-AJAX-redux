@@ -1,5 +1,4 @@
 (() => {
-
 	gsap.registerPlugin(ScrollTrigger);
 	const characterBox = document.querySelector("#character-list");
 	const movieDetailsTemplate = document.querySelector("#movie-details-template");
@@ -68,8 +67,9 @@
 		fetch(`${filmUrl}`)
 			.then(response => response.json())
 			.then(function(film) {
+				//this line of code hides the loading spinner
 				hideLoadingOverlay();
-				console.log("Fetched film details:", film);
+				console.log("Fetched details:", film);
 				const template = document.importNode(movieDetailsTemplate.content, true);
 				template.querySelector(".movie-title").textContent = film.title;
 				template.querySelector(".movie-opening-crawl").textContent = film.opening_crawl;
