@@ -17,20 +17,7 @@ body {
     
 }
 
-img {
-    width: 50%;
-    display: block;
-    margin: 0 auto;
-}
-h2 {
-    font-family: 'Starjedi', sans-serif;
 
-    font-size: 50px;
-}
-h3 {
-    font-size: 40px;
-    margin: 0 auto;
-}
   
 // Spinner
 
@@ -48,10 +35,14 @@ h3 {
 }
 
 .loading-text {
-    color: #000000; 
-    margin-top: 20px; 
-    text-align: center; 
+    color: #FFE81F; /* Golden yellow color */
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Starjedi', sans-serif;
+    font-weight: bold;
+    font-style: oblique;
     font-size: 20px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
 }
 
 

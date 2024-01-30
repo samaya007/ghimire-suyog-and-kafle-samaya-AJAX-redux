@@ -18,7 +18,13 @@ When making chnages with ID's check once in JS and SASS
 */
 
 
+
 (() => {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
     const characterBox = document.querySelector("#character-list");
     const movieDetailsTemplate = document.querySelector("#movie-details-template");
     const movieDetailsCon = document.querySelector("#movie-details-con");
@@ -63,7 +69,26 @@ console.log(response);
                     li.appendChild(a);
                     characterBox.appendChild(li);
                 });
+             
+                    gsap.from('#character-list li', {
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.2,
+                        scrollTrigger: {
+                            trigger: '#character-list',
+                            start: 'top bottom', 
+                            toggleActions: 'restart none none none',
+                        },
+             
+                });
+
+
             })
+
+
+
+
+            
             .catch(error => {
                 hideLoadingOverlay();
                 console.error("Failed to fetch characters:", error);
