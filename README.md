@@ -24,5 +24,9 @@ NONE
 * SASS/CSS
 * JAVASCRIPT
 
+## Members
+Ghimire Suyog
+Kafle Samaya
+
 ## License
 MIT
