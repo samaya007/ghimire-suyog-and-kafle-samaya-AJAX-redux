@@ -1,8 +1,8 @@
 (() => {
 	gsap.registerPlugin(ScrollTrigger);
-	const characterBox = document.querySelector("#character-list");
-	const movieDetailsTemplate = document.querySelector("#movie-details-template");
-	const movieDetailsCon = document.querySelector("#movie-details-con");
+	const characterList = document.querySelector("#list-of-characters");
+	const movieOverviewTemplate = document.querySelector("#movie-overview-template");
+	const movieInfoCon = document.querySelector("#movie-info-con");
 	const loadingOverlay = document.querySelector('#loading-overlay');
 	const baseUrl = 'https://swapi.dev/api/';
 	//function for reloading animation
@@ -35,15 +35,15 @@
 					}
 					a.addEventListener("click", getMovieDetails);
 					li.appendChild(a);
-					characterBox.appendChild(li);
+					characterList.appendChild(li);
 				});
 				//start of gsap
-				gsap.from('#character-list li', {
+				gsap.from('#list-of-characters li', {
 					opacity: 0,
 					duration: 1,
 					stagger: 0.2,
 					scrollTrigger: {
-						trigger: '#character-list',
+						trigger: '#list-of-characters',
 						start: 'top bottom',
 						toggleActions: 'restart none none none',
 					},
@@ -59,7 +59,7 @@
 		//this line of code prevents the page from reloading
 		event.preventDefault();
 		//this line of code remove old movies
-		movieDetailsCon.innerHTML = "";
+		movieInfoCon.innerHTML = "";
 		//for loading animation
 		showLoadingOverlay();
 		const filmUrl = event.currentTarget.dataset.films;
@@ -70,11 +70,11 @@
 				//this line of code hides the loading spinner
 				hideLoadingOverlay();
 				console.log("Fetched details:", film);
-				const template = document.importNode(movieDetailsTemplate.content, true);
+				const template = document.importNode(movieOverviewTemplate.content, true);
 				template.querySelector(".movie-title").textContent = film.title;
 				template.querySelector(".movie-opening-crawl").textContent = film.opening_crawl;
 				template.querySelector(".movie-poster").src = `images/${film.episode_id}.jpeg`;
-				movieDetailsCon.appendChild(template);
+				movieInfoCon.appendChild(template);
 			})
 			.catch(error => {
 				hideLoadingOverlay();
