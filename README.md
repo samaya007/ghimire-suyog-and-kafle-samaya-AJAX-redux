@@ -25,7 +25,7 @@ NONE
 * JAVASCRIPT
 
 ## Members
-Ghimire Suyog
+Ghimire Suyog and
 Kafle Samaya
 
 ## License
